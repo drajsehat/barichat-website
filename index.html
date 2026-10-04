@@ -69,6 +69,9 @@ p{margin:0}
 .hero-copy{margin-top:28px;max-width:34ch;font-size:clamp(19px,2.2vw,22px);line-height:1.45;color:var(--on-navy-body)}
 .hero-copy strong{color:var(--cream)}
 .hero .btns{margin-top:28px}
+.hero-news{margin-top:16px;font:500 15px/1.4 var(--display)}
+.hero-news a{color:var(--cream);text-decoration-color:var(--orange);text-underline-offset:4px}
+.hero-news a:hover{color:var(--orange)}
 
 .latest{background:var(--navy-2);border:1px solid var(--navy-3);border-radius:18px;padding:24px;display:grid;gap:14px}
 .latest .eyebrow{color:var(--orange)}
@@ -179,6 +182,11 @@ td.num{font:500 15px/1.3 var(--mono);color:var(--orange);white-space:nowrap}
 .news{border:1px dashed var(--navy-3);border-radius:16px;padding:24px;display:grid;gap:10px}
 .news h3{color:var(--cream)}
 .news p{color:var(--on-navy-muted);font-size:16px}
+.signup{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.signup input{flex:1 1 220px;min-width:0;height:46px;padding:0 18px;border-radius:999px;border:1px solid var(--cream);background:var(--paper);color:var(--ink);font:16px var(--body)}
+.signup input::placeholder{color:#6B7285}
+.signup .btn{height:46px;cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 footer{border-top:1px solid var(--navy-3);padding-block:32px 40px;color:var(--on-navy-muted);font-size:14px}
 footer .wrap{display:grid;gap:14px}
@@ -197,6 +205,7 @@ footer .disclaimer{max-width:80ch}
       <a href="#host">About Dr. Sehat</a>
       <a href="#procedures">Procedures</a>
       <a href="#resources">Resources</a>
+      <a href="#newsletter">Newsletter</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -215,6 +224,7 @@ footer .disclaimer{max-width:80ch}
         <a class="btn btn-primary" href="https://open.spotify.com/show/464wdMg4g87RkZXJo4Mdmz" target="_blank" rel="noopener">Listen on Spotify</a>
         <a class="btn btn-ghost" href="https://podcasts.apple.com/us/podcast/bari-chat-with-dr-sehat-https-linktr-ee-drajsehat/id1845709204" target="_blank" rel="noopener">Apple Podcasts</a>
       </div>
+      <p class="hero-news"><a href="#newsletter">Get each new episode by email &rarr;</a></p>
     </div>
     <aside class="latest" aria-label="Latest episode">
       <p class="eyebrow">Latest episode</p>
@@ -485,10 +495,15 @@ footer .disclaimer{max-width:80ch}
             <a href="https://linktr.ee/drajsehat" target="_blank" rel="noopener">All links</a>
           </div>
         </div>
-        <div class="news">
-          <p class="eyebrow" style="color:var(--orange)">Coming soon</p>
-          <h3>The Bari Chat newsletter</h3>
-          <p>One email per episode: the key points, the papers mentioned, a myth busted, and a listener question answered. Email to get on the list early.</p>
+        <div class="news" id="newsletter">
+          <p class="eyebrow" style="color:var(--orange)">Free newsletter</p>
+          <h3>Get each episode in your inbox</h3>
+          <p>One email per episode: the key points, the papers mentioned, a myth busted, and a listener question answered. No spam, and you can unsubscribe anytime.</p>
+          <form class="signup" id="signup-form" action="https://drajsehat-newsletter.beehiiv.com/subscribe" method="get" target="_blank">
+            <label class="sr" for="signup-email">Email address</label>
+            <input id="signup-email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
+            <button class="btn btn-primary" type="submit">Join the list</button>
+          </form>
         </div>
       </div>
     </div>
